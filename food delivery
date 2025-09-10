@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Delivery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+    }
+    header {
+      background: #ff5722;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+    .item {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 200px;
+      text-align: center;
+    }
+    form {
+      max-width: 400px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    input, textarea, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #ff5722;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e64a19;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍔 QuickBite Food Delivery</h1>
+    <p>Delicious food delivered to your door</p>
+  </header>
+
+  <section class="menu">
+    <div class="item">
+      <h3>Pizza</h3>
+      <p>Cheesy & Hot</p>
+      <p>₹250</p>
+    </div>
+    <div class="item">
+      <h3>Burger</h3>
+      <p>Juicy & Tasty</p>
+      <p>₹150</p>
+    </div>
+    <div class="item">
+      <h3>Pasta</h3>
+      <p>Creamy & Delicious</p>
+      <p>₹200</p>
+    </div>
+  </section>
+
+  <form id="orderForm">
+    <h2>Place Your Order</h2>
+    <input type="text" id="name" placeholder="Full Name" required>
+    <textarea id="address" placeholder="Delivery Address" required></textarea>
+    <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" required>
+    <button type="submit">Submit Order</button>
+  </form>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let name = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      alert("Thank you, " + name + "! Your order has been placed. We'll contact you at " + phone + ".");
+    });
+  </script>
+
+</body>
+</html>
